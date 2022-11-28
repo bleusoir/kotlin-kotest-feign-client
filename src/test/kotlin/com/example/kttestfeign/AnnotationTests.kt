@@ -18,7 +18,7 @@ class AnnotationTests : AnnotationSpec() {
     private lateinit var feignService: FeignService
 
     @Test
-    fun test() {
+    fun annotationTest() {
 
         val result = feignService.testFeignClient("TEST")
 

@@ -1,6 +1,7 @@
 package com.example.kttestfeign
 
 import com.example.kttestfeign.delegate.LoggerDelegate
+import com.example.kttestfeign.dto.NormalResponseDto
 import com.example.kttestfeign.service.FeignService
 import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.extensions.spring.SpringExtension
@@ -26,7 +27,9 @@ internal class DescribeTests : DescribeSpec() {
                     val result = feignService.testFeignClient("TEST")
 
                     log.warn("result is :: {}", result)
-                    result shouldBe "TEST"
+
+                    result shouldBe NormalResponseDto(null, null, "218.48.79.110",
+                        "https://httpbin.org/get")
                 }
             }
         }
